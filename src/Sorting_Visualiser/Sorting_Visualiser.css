@@ -1,1 +1,16 @@
+.array-container {
+   position:absolute;
+   left: 100px;/*bars start from 100 px from left edge*/
+   right:100px;
+} /*used to define the position of bars*/
 
+.array-bar{
+    width:3px;
+    background-color: burlywood;
+    display: inline-block;/*inline means text same line se start hojayega
+                          block means now data will respect width and height*/
+    margin-top: 5px;
+    margin-right: 1px;
+    margin-bottom: 0;
+    margin-left: 1px;                      
+}

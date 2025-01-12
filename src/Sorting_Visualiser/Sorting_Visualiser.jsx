@@ -16,9 +16,9 @@ export default class Sorting_Visualiser extends React.Component{ //Sorting_Visua
 
     resetArray(){
         const array=[];
-        for(let i=0;i<100;i++)
+        for(let i=0;i<175;i++)
         {
-            array.push(randomIntFromInterval(5,1000));
+            array.push(randomIntFromInterval(5,450));
         }
         this.setState({array});// changes the state of component to this
     }
@@ -28,19 +28,21 @@ export default class Sorting_Visualiser extends React.Component{ //Sorting_Visua
     
         return (
             // Use React Fragment to return multiple elements without adding an extra DOM element
-            <>
+            <div className='array-container'>
+                 
                 {
                     // Use the map function to iterate over each element in the 'array'
                     array.map((value, idx) => (
                         // For each element, return a <div> element with the class "array-bar"
                         // The 'key' prop is assigned the index of the element to help React identify changes
-                        <div className="array-bar" key={idx}>
-                            {value}
+                        <div className="array-bar" 
+                        key={idx}
+                        style={{height:`${value}px`}}>
                         </div>
                         /* Display the value of the current element from the 'array'*/
                     ))
                 }
-            </>
+            </div>
         );
     }
     
