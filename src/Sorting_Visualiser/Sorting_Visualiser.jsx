@@ -1,5 +1,6 @@
 import React from 'react';
-import './Sorting_Visualiser.css';
+import * /*star here to import absolutely everything*/ as sortingAlgorithms from '../Sorting_Algorithms/sortingAlgorithms.js';//double . here as we have to go two levels above to src folder
+import './Sorting_Visualiser.css'//single here as we have to go one level above to Sorting_Visualiser folder
 
 export default class Sorting_Visualiser extends React.Component{ //Sorting_Visualiser is now a component
     constructor(props){// constructor hai
@@ -22,6 +23,18 @@ export default class Sorting_Visualiser extends React.Component{ //Sorting_Visua
         }
         this.setState({array});// changes the state of component to this
     }
+    mergeSort(){
+        const sortedArray=sortingAlgorithms.mergeSort(this.state.array);
+    }
+
+    quickSort(){}
+
+    bubbleSort(){}
+
+    heapSort(){}
+
+
+
     render() {
         // Access the current state of the component and store it in the 'array' variable
         const array = this.state.array; 
@@ -42,6 +55,11 @@ export default class Sorting_Visualiser extends React.Component{ //Sorting_Visua
                         /* Display the value of the current element from the 'array'*/
                     ))
                 }
+                <button onClick={()=> this.resetArray()}>Generate New Array </button> 
+                <button onClick={()=> this.mergeSort()}> Merge Sort </button> 
+                <button onClick={()=> this.quickSort()}> Quick Sort </button> 
+                <button onClick={()=> this.bubbleSort()}> Bubble Sort </button> 
+                <button onClick={()=> this.heapSort()}> Heap Sort </button> 
             </div>
         );
     }
